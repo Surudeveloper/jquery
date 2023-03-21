@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="https://www.tutorialspoint.com/jquery/jquery-3.6.0.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+
+    <title>J Query</title>
+
+
+    <style>
+        .big {
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+        .small {
+            font-weight: normal;
+            font-size: 10px;
+        }
+
+        button {
+            margin: 5px;
+            width: 150px;
+            cursor: pointer
+        }
+
+        div {
+            margin: 5px;
+            padding: 12px;
+            width: 125px;
+        }
+    </style>
+</head>
+
+<body>
+    <br>
+    <div class="container" style="background-color:#0a0a0a;">
+        <button id="btn1" class="btn1Class btn btn-primary" value="Hi From Button 1 using ID">Button 1</button>
+        <button id="btn2" class="btn2Class btn btn-warning" value="Hi From Button 2 using Class">Button 2</button>
+        <button id="btn3" class="btn3Class btn btn-danger" >Content</button>
+        <button id="btn4" class="btn4Class btn btn-success" >Delete</button>
+
+    </div>
+    <p></p>
+    <div class="container" style="background-color:#ade0de;">
+        <h2>Append() Method</h2>
+        <div class="inner">Hello</div>
+        <div class="inner">Goodbye</div>
+        <button id="btnappend" class="btnAClass btn btn-success">Append</button>
+    </div><br>
+
+    <div class="container" style="background-color:#93ff93;">
+        <h2>Prepend() Method</h2>
+        <div class="inner1">Hello</div>
+        <div class="inner1">Goodbye</div>
+        <button id="btn5" class="btn5Class btn btn-warning" value="Hi From Button 5">Prepend</button>
+    </div><br>
+
+    <div class="container" style="background-color:#d69abd;">
+        <h2>Add & Remove Class() Method</h2>
+        <div class="hello">Hello</div>
+        <div class="goodbye">Goodbye</div>
+        <button id="btn" class="btnClass btn btn-success">Add Class</button>
+        <button id="btnRmv" class="btnClass btn btn-danger">Remove Class</button>
+    </div>
+    <br>
+
+    <div class="container" style="background-color:#e4dd83;">
+        <h2>Toggle Method</h2>
+        <div class="hello1">Hello</div>
+        <div class="goodbye1">Goodbye</div>
+        <button id="button" class="btntog btn btn-primary">Toggle</button>
+    </div>
+    <br>
+
+    <div class="container" style="background-color:#99da7b;">Box
+        <h2>Get & Set Width</h2>
+        <button id="b1" class="btntog btn btn-success">Get width</button>
+        <button id="b2" class="btntog btn btn-primary">Set width</button><br>
+    </div><br>
+
+    <div class="container" style="background-color:#aa9db9;">Box
+        <h2>Get & Set Height</h2>
+        <button id="b3" class="btntog btn btn-warning">Get Height</button>
+        <button id="b4" class="btntog btn btn-danger">Set Height</button><br>
+    </div><br>
+
+</body>
+
+<script>
+    $(document).ready(() => {
+        $('#btn1').click(() => {
+            alert($("#btn1").val());
+            console.log(`Clicked Button 1`);
+        })
+
+        $('.btn2Class').click(() => {
+            alert($("#btn2").val());
+        })
+
+        $("#btn3").click(function () {
+            console.log(`Content is set in <p>`);
+            $("p").html("The quick <b>brown fox</b> jumps over the <b>lazy dog</b>");
+            // $("p").text("The quick <b>brown fox</b> jumps over the <b>lazy dog</b>");
+        });
+
+        $("#btn4").click(function () {
+            console.log(`fade out`);
+            $("p").fadeOut('slow');
+        });
+
+        $("#btnappend").click(function () {
+            $(".inner").append("<p>Veer</p>");
+        });
+
+        $("#btn5").click(function () {
+            $(".inner1").prepend("<p>Zara</p>");
+        });
+
+        $('#btn').click(() => {
+            $(".hello").addClass("big");
+            $(".goodbye").addClass("small");
+        })
+
+        $('#btnRmv').click(() => {
+            $(".hello").removeClass("big");
+            $(".goodbye").removeClass("small");
+        })
+
+        $("button").click(function () {
+            $(".hello1").toggleClass("big");
+        });
+
+        $("#b1").click(function () {
+            alert("Box width = " + $("div").width());
+        });
+
+        $("#b2").click(function () {
+            $("div").width("400px");
+        });
+
+        $("#b3").click(function () {
+            alert("Box height = " + $("div").height());
+        });
+
+        $("#b4").click(function () {
+            $("div").height("50px");
+        });
+
+
+
+    })
+</script>
+
+</html>

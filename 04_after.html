@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+<head>
+<title>After() Method</title>
+<script src="https://www.tutorialspoint.com/jquery/jquery-3.6.0.js"></script>
+<script>
+   $(document).ready(function() {
+      $("button").click(function(){
+         $(".inner").after("<p>Zara</p>");
+      });
+   });
+</script>
+</head>
+<body>
+   <div class="container">
+      <h2>jQuery after() Method</h2>
+      <div class="inner">Hello</div>
+      <div class="inner">Goodbye</div>
+   </div>
+   <br>
+   
+   <button>Add Text</button>
+</body>
+</html>
